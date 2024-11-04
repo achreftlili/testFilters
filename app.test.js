@@ -77,3 +77,28 @@ test('countNumberOfAnimalsPerPerson appends count to each person', () => {
         }
     ]);
 });
+
+test('countNumberOfAnimalsPerPerson and filterAnimals', () => {
+    let resultOfFilter = filterAnimalsByName(sampleData, 'onkey');
+    let resultOfCount = countNumberOfAnimalsPerPerson(resultOfFilter);
+    expect(resultOfCount).toEqual([
+        {
+            name: "Tunisia",
+            people: [
+                {
+                    name: "Momo [1]",
+                    animals: [
+                        { name: "Monkey" }
+
+                    ]
+                },
+                {
+                    name: "Link [1]",
+                    animals: [
+                        { name: "Donkey" }
+                    ]
+                }
+            ]
+        }
+    ]);
+});
